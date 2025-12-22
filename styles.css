@@ -342,6 +342,86 @@ a {
   background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.02));
 }
 
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.about-content h2 {
+  margin: 8px 0 12px;
+}
+
+.about-subsection {
+  margin: 20px 0;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.about-subsection h3 {
+  margin: 0 0 10px;
+}
+
+.about-list li::before {
+  color: var(--accent);
+}
+
+.split-list {
+  columns: 2;
+  column-gap: 18px;
+  padding-left: 0;
+}
+
+.split-list li {
+  break-inside: avoid;
+}
+
+.about-actions {
+  margin-top: 16px;
+}
+
+.about-profile {
+  display: grid;
+  gap: 16px;
+  position: sticky;
+  top: 90px;
+}
+
+.photo-placeholder {
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  aspect-ratio: 3 / 4;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  background: radial-gradient(circle at 20% 20%, rgba(228, 85, 144, 0.08), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(124, 138, 255, 0.08), transparent 40%),
+    rgba(255, 255, 255, 0.02);
+  padding: 16px;
+  text-align: center;
+}
+
+.photo-placeholder span {
+  max-width: 180px;
+}
+
+.profile-copy {
+  color: var(--text-muted);
+}
+
+.profile-copy h4 {
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.profile-meta .checklist li::before {
+  color: var(--accent);
+}
+
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -646,6 +726,18 @@ select:focus {
 
   .hero {
     padding-top: 90px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-profile {
+    position: static;
+  }
+
+  .split-list {
+    columns: 1;
   }
 }
 

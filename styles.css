@@ -620,6 +620,33 @@ a {
     linear-gradient(120deg, rgba(124, 138, 255, 0.08), rgba(228, 85, 144, 0.1));
 }
 
+.signup-card {
+  display: grid;
+  gap: 16px;
+}
+
+.signup-header h2 {
+  margin: 6px 0 10px;
+}
+
+.signup-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.signup-title {
+  margin: 0 0 10px;
+}
+
+.signup-actions {
+  display: grid;
+  gap: 10px;
+  align-self: center;
+  max-width: 320px;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

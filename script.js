@@ -26,14 +26,19 @@ if (form) {
   });
 }
 
-// Плавная прокрутка
-const links = document.querySelectorAll('a[href^="#"]');
+// Плавная прокрутка для ссылок, которые ведут на эту же страницу
+const links = document.querySelectorAll('a[href*="#"]');
+const normalizePath = (path) => path.replace(/\/index\.html$/, '/');
+
 links.forEach((link) => {
-  link.addEventListener('click', (e) => {
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+  const url = new URL(link.href, window.location.href);
+  if (normalizePath(url.pathname) === normalizePath(window.location.pathname) && url.hash) {
+    link.addEventListener('click', (e) => {
+      const target = document.querySelector(url.hash);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
 });
